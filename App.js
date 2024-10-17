@@ -60,11 +60,11 @@ const RestaurantCard = ({resName, cuisine, resData})=>{
   return(
     <div className="res-card" style={{backgroundColor : "#f0f0f0"
        }}>
-      <img className="res-logo" src={resData.items[0].imageUrl}/>
+      <img className="res-logo" src={resData.item.imageUrl}/>
       {/* <h3>Meghana Foods</h3> */}
       <h3>{resData.restaurantName}</h3>
-      <h4>{resData.items[0].category}</h4>
-      <h4>{resData.items[0].rating}</h4>
+      <h4>{resData.categories.join(',')}</h4>
+      <h4>{resData.item.rating}</h4>
       <h4>{resData.deliveryTime}</h4>
     </div>
   )
@@ -72,50 +72,56 @@ const RestaurantCard = ({resName, cuisine, resData})=>{
 
 //look  github for older object
 
-const resObj = {
-  restaurantName: "KFC",
-  location: "Various Locations",
-  items: [
-    {
+const resList = [
+  {
+    restaurantName: "KFC",
+    location: "Various Locations",
+    categories: ["Chicken", "Burgers", "Sides", "Beverages"],
+    item: {
       id: 1,
       name: "Original Recipe Chicken",
       description: "Fried chicken with a secret blend of 11 herbs and spices.",
       price: 299,
+      imageUrl: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRVmr6yv899mQZ4PLJ7XOvwVXXqG_Pnhf_oKg&s",
       category: "Chicken",
-      imageUrl: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ55SRxTAXYYgFLFgldknc-rNA5EdMtTuIwVg&s", // Example image URL
       rating: 4.5,
     },
-    {
-      id: 2,
-      name: "Zinger Burger",
-      description: "Spicy chicken fillet in a burger bun with lettuce and mayo.",
-      price: 199,
+    averageRating: 4.4,
+    deliveryTime: "30-40 mins",
+  },
+  {
+    restaurantName: "Burger King",
+    location: "Various Locations",
+    categories: ["Burgers", "Sides", "Beverages"],
+    item: {
+      id: 1,
+      name: "Whopper",
+      description: "Flame-grilled beef patty topped with fresh vegetables.",
+      price: 249,
       category: "Burgers",
-      imageUrl: "https://example.com/images/zinger-burger.jpg", // Example image URL
-      rating: 4.2,
+      imageUrl: "https://b.zmtcdn.com/data/pictures/chains/8/18902548/c8008523810583087401ff292c1763a3.jpg?fit=around|750:500&crop=750:500;*,*",
+      rating: 4.6,
     },
-    {
-      id: 3,
-      name: "French Fries",
-      description: "Crispy golden fries.",
-      price: 99,
-      category: "Sides",
-      imageUrl: "https://example.com/images/french-fries.jpg", // Example image URL
-      rating: 4.3,
+    averageRating: 4.5,
+    deliveryTime: "30-45 mins",
+  },
+  {
+    restaurantName: "Domino's Pizza",
+    location: "Various Locations",
+    categories: ["Pizzas", "Sides", "Desserts"],
+    item: {
+      id: 1,
+      name: "Margherita Pizza",
+      description: "Classic pizza topped with mozzarella cheese and basil.",
+      price: 499,
+      category: "Pizzas",
+      imageUrl: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTwTMdjFNfvW3Q7t_0U4kCGi9NjC0bnODoGmA&s",
+      rating: 4.7,
     },
-    {
-      id: 4,
-      name: "Pepsi",
-      description: "Chilled Pepsi.",
-      price: 49,
-      category: "Beverages",
-      imageUrl: "https://example.com/images/pepsi.jpg", // Example image URL
-      rating: 4.0,
-    },
-  ],
-  averageRating: 4.4,
-  deliveryTime: "30-40 mins",
-};
+    averageRating: 4.6,
+    deliveryTime: "25-35 mins",
+  },
+];
 
 const Body = () =>{
   return(
@@ -129,8 +135,10 @@ const Body = () =>{
         <RestaurantCard 
           // resName="KFC" 
           // cuisine="Burger, Fast Food"
-          resData={resObj}
+          resData={resList[0]}
         />
+        <RestaurantCard resData={resList[1]}/>
+        <RestaurantCard resData={resList[2]}/>
       </div>
     </div>
   )
