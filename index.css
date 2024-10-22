@@ -22,7 +22,7 @@
 .res-card{
   padding: 5px;
   width: 200px;
-  height: 300px;
+  height: 320px;
 }
 .res-card:hover{
   border: 1px solid black;
@@ -32,6 +32,7 @@
   overflow-wrap: break-word; 
 }.res-container{
   display: flex;
+  justify-content: center;
   flex-wrap: wrap;
   gap: 10px;
 }
