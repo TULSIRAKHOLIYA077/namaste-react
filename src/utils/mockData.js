@@ -8,7 +8,7 @@ const resList = [
       name: "Original Recipe Chicken",
       description: "Fried chicken with a secret blend of 11 herbs and spices.",
       price: 299,
-      imageUrl: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRVmr6yv899mQZ4PLJ7XOvwVXXqG_Pnhf_oKg&s",
+      imageUrl: "https://media-assets.swiggy.com/swiggy/image/upload/f_auto,q_auto,fl_lossy/RX_THUMBNAIL/IMAGES/VENDOR/2024/4/17/4a509cf1-ea35-497b-9813-59145c5007c9_588619.JPG",
       category: "Chicken",
       rating: 4.5,
     },
@@ -146,3 +146,4 @@ const resList = [
 ];
 
 export default resList;
+

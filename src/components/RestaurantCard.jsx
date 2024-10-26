@@ -1,5 +1,5 @@
 
-const RestaurantCard = ({resName, cuisine, resData})=>{
+export const RestaurantCard1 = ({resName, cuisine, resData})=>{
   const {imageUrl,rating} = resData.item;
   const {restaurantName,categories,deliveryTime} = resData;
   return(
@@ -15,4 +15,22 @@ const RestaurantCard = ({resName, cuisine, resData})=>{
   )
 }
 
-export default RestaurantCard;
+export const RestaurantCard2 = ({resData})=>{
+  // Base URL for images
+  const baseUrl = "https://media-assets.swiggy.com/swiggy/image/upload/f_auto,q_auto,fl_lossy";
+
+  // Full image URL
+  const imageUrl = `${baseUrl}/${resData.info.cloudinaryImageId}`;
+
+  return(
+    <div className="res-card" style={{backgroundColor : "#f0f0f0"
+       }}>
+      <img className="res-logo2" src={imageUrl}/>
+      <h3>{resData.info.name}</h3>
+      <h4>{resData.info.cuisines[0]}</h4>
+      <h4>{resData.info.avgRating}</h4>
+      <h4>{resData.info.sla.slaString}</h4>
+    </div>
+  )
+}
+
