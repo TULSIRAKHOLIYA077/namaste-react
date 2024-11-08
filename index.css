@@ -23,6 +23,7 @@
   padding: 5px;
   width: 200px;
   height: 340px;
+  text-decoration: none;
 }
 .res-card:hover{
   border: 1px solid black;
@@ -30,7 +31,8 @@
 }
 .res-card h4 {
   overflow-wrap: break-word; 
-}.res-container{
+}
+.res-container{
   display: flex;
   justify-content: center;
   flex-wrap: wrap;
@@ -72,3 +74,8 @@
 .search{
   margin: 10px;
 }
+.user-card{
+  padding: 10px;
+  border: 1px solid black;
+}
+

@@ -12,10 +12,10 @@ export const RestaurantCard = ({resData})=>{
     <div className="res-card" style={{backgroundColor : "#f0f0f0"
        }}>
       <img className="res-logo" src={imageUrl}/>
-      <h3>{name}</h3>
-      <h4>{cuisines[0]}</h4>
-      <h4>{avgRating}</h4>
-      <h4>{resData.info.sla.slaString}</h4>
+      <h3 className="decoration">{name}</h3>
+      <h4 className="decoration">{cuisines[0]}</h4>
+      <h4 className="decoration">{avgRating}</h4>
+      <h4 className="decoration">{resData.info.sla.slaString}</h4>
     </div>
   )
 }
