@@ -1,7 +1,14 @@
-const User = () =>{
+import { useState } from "react"; 
+
+const User = ({name}) =>{
+  const [count, setCount] = useState(0); 
+  const [count2] = useState(1); 
+
   return (
     <div className="user-card">
-      <h2>Name: Tulsi</h2>
+      <h1>Count = {count}</h1>
+      {/* <h1>Count = {count2}</h1> */}
+      <h2>Name: {name}</h2>
       <h3>Location: Dehradun</h3>
       <h4>Contact: @tulsimarch7</h4>
     </div>
