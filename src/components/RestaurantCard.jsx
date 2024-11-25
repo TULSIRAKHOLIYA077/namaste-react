@@ -9,10 +9,9 @@ export const RestaurantCard = ({resData})=>{
   const imageUrl = `${baseUrl}/${resData.info.cloudinaryImageId}`;
 
   return(
-    <div className="res-card" style={{backgroundColor : "#f0f0f0"
-       }}>
-      <img className="res-logo" src={imageUrl}/>
-      <h3 className="decoration">{name}</h3>
+    <div className="m-4 p-4 w-[230px] h-[420px] bg-gray-100 hover:bg-gray-200">
+      <img className="rounded-lg" src={imageUrl}/>
+      <h3 className="font-bold py-4 text-xl">{name}</h3>
       <h4 className="decoration">{cuisines[0]}</h4>
       <h4 className="decoration">{avgRating}</h4>
       <h4 className="decoration">{resData.info.sla.slaString}</h4>

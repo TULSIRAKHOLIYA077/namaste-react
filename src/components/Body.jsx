@@ -23,7 +23,11 @@ const Body = () =>{
     
     setListOfRestaurant(json?.data?.cards[4]?.card?.card?.gridElements?.infoWithStyle?.restaurants);
 
+    
+
     setfilteredRestaurant(json?.data?.cards[4]?.card?.card?.gridElements?.infoWithStyle?.restaurants);
+
+    
 
     
   }
@@ -42,14 +46,17 @@ const Body = () =>{
 
   return (listOfRestaurant.length === 0) ? <Shimmer/> :(
     <div className="body">
-      <div className="filter">
-        <div className="search">
-          <input type="text" className="search-box" value={searchText} onChange={(e)=>{
+      <div className="filter flex">
+        <div className="search m-4 p-4">
+          <input type="text" 
+            className="search-box border border-solid border-black" 
+            value={searchText} onChange={(e)=>{
             setsearchText(e.target.value);
             console.log(searchText);
             
           }}/>
-        <button 
+        <button
+          className="px-4 py-2 bg-green-100 m-4 rounded-lg" 
           onClick={() => {
             const searchedList = listOfRestaurant.filter((res) => 
               res.info.name.toLowerCase().includes(searchText.toLowerCase())
@@ -60,17 +67,18 @@ const Body = () =>{
           Search
         </button>
         </div>
+        <div className="m-4 p-4 flex items-center">
         <button 
-          className="filter-btn" 
+          className="px-4 py-2 bg-gray-100 rounded-lg" 
           onClick={()=>{
             const filteredList = listOfRestaurant.filter((res)=> res.averageRating > 4);
             setListOfRestaurant(filteredList);
           }}
         >
-          Top Rated Restaurant
-        </button>      
+          Top Rated Restaurant </button>
+        </div>
       </div>
-      <div className="res-container">
+      <div className="flex flex-wrap justify-center">
         {/* <RestaurantCard1 
           resName="Meghana Foods" 
           cuisine="Biryani, North Indian, Asian"
