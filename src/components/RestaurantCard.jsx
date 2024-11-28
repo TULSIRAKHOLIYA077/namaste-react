@@ -1,7 +1,10 @@
+import { useContext } from "react";
+import UserContext from "../utils/UserContext";
 
 
 export const RestaurantCard = ({resData})=>{
   const {name, cuisines, avgRating} = resData.info;
+  const {loggedInUser} = useContext(UserContext);
   // Base URL for images
   const baseUrl = "https://media-assets.swiggy.com/swiggy/image/upload/f_auto,q_auto,fl_lossy";
 
@@ -15,6 +18,7 @@ export const RestaurantCard = ({resData})=>{
       <h4 className="decoration">{cuisines[0]}</h4>
       <h4 className="decoration">{avgRating}</h4>
       <h4 className="decoration">{resData.info.sla.slaString}</h4>
+      <h4>User: {loggedInUser}</h4>
     </div>
   )
 }
