@@ -10,7 +10,11 @@ const Header = ()=>{
   const onlineStatus = useOnlineStatus();
 
   const {loggedInUser} = useContext(UserContext);
-  console.log(loggedInUser);
+  console.log(loggedInUser);//     or 
+
+  // const userContext = useContext(UserContext);
+  // const loggedInUser = userContext.loggedInUser;
+
    
 
   return(
