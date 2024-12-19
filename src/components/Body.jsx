@@ -12,6 +12,7 @@ const Body = () =>{
 
   const [searchText, setsearchText] = useState("");
 
+
   useEffect(()=>{
      fetchData()
   },[]);
@@ -51,12 +52,13 @@ const Body = () =>{
     <div className="body">
       <div className="filter flex">
         <div className="search m-4 p-4">
-          <input type="text" 
+          <input 
+            type="text" 
             className="search-box border border-solid border-black" 
-            value={searchText} onChange={(e)=>{
-            setsearchText(e.target.value);
-            console.log(searchText);
-            
+            data-testid="searchInput"
+            value={searchText} 
+            onChange={(e)=>{
+            setsearchText(e.target.value);            
           }}/>
         <button
           className="px-4 py-2 bg-green-100 m-4 rounded-lg" 
@@ -76,9 +78,11 @@ const Body = () =>{
             onClick={()=>{
               const filteredList = listOfRestaurant.filter((res)=> res.averageRating > 4);
               setListOfRestaurant(filteredList);
-            }}
+            }
+          }
           >
-            Top Rated Restaurant </button>
+            Top Rated Restaurants
+          </button>
         </div>
         <div className="m-4 p-4 flex items-center">
           <label htmlFor="">UserName:</label>
@@ -101,11 +105,12 @@ const Body = () =>{
         <RestaurantCard resData={resList[2]}/> */}
         {/* instead of calling each RestaurantCard component */}
         {
-            filteredRestaurant.map(restaurant => (
-              <Link key={restaurant.info.id} to={"/restaurants/"+restaurant.info.id}>
-                <RestaurantCard resData={restaurant} />
-              </Link> 
-            ))
+           filteredRestaurant.map((restaurant) => (
+            <Link key={restaurant.info.id} to={"/restaurants/"+restaurant.info.id}>
+              <RestaurantCard resData={restaurant} />
+            </Link> 
+          ))
+
         }
       </div>
     </div>
