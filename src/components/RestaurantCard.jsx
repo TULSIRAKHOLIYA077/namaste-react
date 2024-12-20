@@ -16,13 +16,13 @@ export const RestaurantCard = ({resData})=>{
   const imageUrl = `${baseUrl}/${resData.info.cloudinaryImageId}`;
 
   return(
-    <div data-testid="resCard" className="m-4 p-4 w-[230px] h-[420px] bg-gray-100 hover:bg-gray-200">
-      <img className="rounded-lg" src={imageUrl}/>
+    <div data-testid="resCard" className="m-4 p-4 w-[230px] h-[470px] bg-slate-100 hover:bg-gray-200">
+      <img className="relative rounded-lg w-[100%] max-h-56" src={imageUrl}/>
       <h3 className="font-bold py-4 text-xl">{name}</h3>
       <h4 className="decoration">{cuisines[0]}</h4>
       <h4 className="decoration">{avgRating}</h4>
       <h4 className="decoration">{resData.info.sla.slaString}</h4>
-      <h4>User: {loggedInUser}</h4>
+      <h4 className="font-semibold">User: {loggedInUser}</h4>
     </div>
   )
 }

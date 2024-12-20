@@ -54,14 +54,15 @@ const Body = () =>{
         <div className="search m-4 p-4">
           <input 
             type="text" 
-            className="search-box border border-solid border-black" 
+            className="search-box border border-solid border-black rounded-md p-2 " 
             data-testid="searchInput"
+            placeholder="Restaurant Name"
             value={searchText} 
             onChange={(e)=>{
             setsearchText(e.target.value);            
           }}/>
         <button
-          className="px-4 py-2 bg-green-100 m-4 rounded-lg" 
+          className="p-2 bg-yellow-300 m-4 rounded-md" 
           onClick={() => {
             const searchedList = listOfRestaurant.filter((res) => 
               res.info.name.toLowerCase().includes(searchText.toLowerCase())
@@ -74,7 +75,7 @@ const Body = () =>{
         </div>
         <div className="m-4 p-4 flex items-center">
           <button 
-            className="px-4 py-2 bg-gray-100 rounded-lg" 
+            className="p-2 bg-yellow-300 rounded-lg" 
             onClick={()=>{
               const filteredList = listOfRestaurant.filter((res)=> res.averageRating > 4);
               setListOfRestaurant(filteredList);
@@ -85,8 +86,8 @@ const Body = () =>{
           </button>
         </div>
         <div className="m-4 p-4 flex items-center">
-          <label htmlFor="">UserName:</label>
-          <input type="text" value={loggedInUser} onChange={(e)=> setUserName(e.target.value)} className="border border-black p-2"/>
+          <label htmlFor="">UserName: </label>
+          <input type="text" placeholder="Name" value={loggedInUser} onChange={(e)=> setUserName(e.target.value)} className="border border-black p-2 m-2 rounded-md"/>
         </div>
       </div>
       <div className="flex flex-wrap justify-center">
